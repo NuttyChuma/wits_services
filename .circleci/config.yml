@@ -2,13 +2,15 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs: 
-  cli: circleci/circleci-cli@volatile
   node: circleci/node@5.0.2
+  cli: circleci/circleci-cli@volatile
+  
 jobs:
   build:
     docker:
-      - image: cirrusci/flutter
       - image: 'circleci/node:10.0.0'
+      - image: cirrusci/flutter
+      
     steps:
       - checkout
       - run: flutter doctor
