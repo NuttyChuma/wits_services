@@ -13,8 +13,10 @@ jobs:
       - run: flutter test --coverage
       - run: genhtml -o coverage coverage/lcov.info
       - run: flutter pub get
-      - run: flutter pub get
-      - run: flutter pub get
+      - run: npm init -y
+      - run: npm install lcov2badge
+      - run: npm run just
+      
       - run: git add .
       - run: git commit -m "coverage[skip ci]" 
       - run: git merge
