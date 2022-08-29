@@ -3,10 +3,12 @@
 version: 2.1
 orbs: 
   cli: circleci/circleci-cli@volatile
+  node: circleci/node@5.0.2
 jobs:
   build:
     docker:
       - image: cirrusci/flutter
+      - image: 'circleci/node:10.0.0'
     steps:
       - checkout
       - run: flutter doctor
