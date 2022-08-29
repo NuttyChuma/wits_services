@@ -4,6 +4,7 @@ version: 2.1
 orbs: 
   cli: circleci/circleci-cli@volatile
   node: circleci/node@4.7.0
+  codecov: codecov/codecov@3.2.3
 jobs:
   build:
     docker:
