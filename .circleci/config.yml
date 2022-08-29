@@ -13,7 +13,8 @@ jobs:
       - run: flutter test --coverage
       - run: genhtml -o coverage coverage/lcov.info
       - run: git add .
-      - run: git commit -m "coverage"
+      - run: git commit -m "coverage" [skip ci]
+      - run: git merge
       - run: git push origin main
       - run: flutter build apk --release
       - store_artifacts:
