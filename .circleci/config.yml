@@ -8,9 +8,10 @@ orbs:
 jobs:
   build:
     executors:
-      docker:
-        - image: cirrusci/flutter
-        - image: 'circleci/node:10.0.0'
+      docker-php:
+        docker:
+          - image: cirrusci/flutter
+          - image: 'circleci/node:10.0.0'
       
     steps:
       - checkout
