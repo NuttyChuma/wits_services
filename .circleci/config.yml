@@ -1,15 +1,19 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
-jobs:
-  build:
-    docker:
-      - image: cirrusci/flutter
-    steps:
-      - checkout
-      - run: flutter doctor
-      - run: flutter test
-      - run: flutter build apk --release
-      - store_artifacts:
-          path: build/app/outputs/flutter-apk/app-release.apk
+orbs: 
+  codecov: codecov/codecov@3.2.3
+workflows:
+  upload-to-codecov:
+    jobs:
+      build:
+        docker:
+          - image: cirrusci/flutter
+        steps:
+          - checkout
+          - codecov/upload
+          - run: flutter doctor
+          - run: flutter test
+          - run: flutter build apk --release
+          - store_artifacts:
+              path: build/app/outputs/flutter-apk/app-release.apk
