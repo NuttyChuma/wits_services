@@ -11,7 +11,6 @@ workflows:
           - image: cirrusci/flutter
         steps:
           - checkout
-          - codecov/upload
           - run: flutter doctor
           - run: flutter test
           - run: flutter build apk --release
