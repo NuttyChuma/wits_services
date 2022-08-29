@@ -12,7 +12,7 @@ jobs:
       - run: flutter doctor
       - run: flutter test --coverage
       - run: genhtml -o coverage coverage/lcov.info
-      - run: open coverage/index.html
+      - run: cd coverage
       - run: git commit
       - run: flutter build apk --release
       - store_artifacts:
