@@ -16,7 +16,7 @@ jobs:
       - run: git commit -m "coverage[skip ci]" 
       - run: git merge
       - run: git push origin main
-      - run: flutter build apk --release
+#       - run: flutter build apk --release
       - store_artifacts:
           path: build/app/outputs/flutter-apk/app-release.apk
 
