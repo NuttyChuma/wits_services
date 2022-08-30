@@ -3,16 +3,19 @@
 version: 2.1
 orbs: 
   cli: circleci/circleci-cli@volatile
+  
 jobs:
   build:
     docker:
       - image: cirrusci/flutter
+      
     steps:
       - checkout
       - run: flutter doctor
       - run: flutter test --coverage
-      - run: genhtml -o coverage coverage/lcov.info
+      - run: flutter pub run flutter_coverage_badge
       - run: flutter pub get
+      
       - run: git add .
       - run: git commit -m "coverage[skip ci]" 
       - run: git merge
