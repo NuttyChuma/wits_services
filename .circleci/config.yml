@@ -3,7 +3,6 @@
 version: 2.1
 orbs: 
   cli: circleci/circleci-cli@volatile
-  node: circleci/node@5.0.2
   
 jobs:
   build:
@@ -11,17 +10,13 @@ jobs:
       docker-php:
         docker:
           - image: cirrusci/flutter
-          - image: 'circleci/node:10.0.0'
       
     steps:
       - checkout
       - run: flutter doctor
       - run: flutter test --coverage
-      - run: genhtml -o coverage coverage/lcov.info
+      - run: flutter pub run flutter_coverage_badge
       - run: flutter pub get
-      - run: npm init -y
-      - run: npm install lcov2badge
-      - run: npm run just
       
       - run: git add .
       - run: git commit -m "coverage[skip ci]" 
