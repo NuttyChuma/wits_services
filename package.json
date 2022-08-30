@@ -1,7 +1,7 @@
 {
   "name": "wits_services",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![CircleCI](https://dl.circleci.com/status-badge/img/gh/NuttyChuma/wits_services/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/NuttyChuma/wits_services/tree/main)\r ![Coverage](./coverage_badge.svg?sanitize=true)",
   "main": "index.js",
   "directories": {
     "lib": "lib",
