@@ -6,10 +6,8 @@ orbs:
   
 jobs:
   build:
-    executors:
-      docker-php:
-        docker:
-          - image: cirrusci/flutter
+    docker:
+      - image: cirrusci/flutter
       
     steps:
       - checkout
